@@ -1,0 +1,103 @@
+
+pack.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+default
+  rotate: false
+  xy: 1, 22
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+energyBall
+  rotate: false
+  xy: 846, 390
+  size: 49, 48
+  orig: 49, 48
+  offset: 0, 0
+  index: -1
+saberBlock
+  rotate: false
+  xy: 787, 6
+  size: 127, 142
+  orig: 127, 142
+  offset: 0, 0
+  index: -1
+saberHit
+  rotate: false
+  xy: 1, 40
+  size: 245, 127
+  orig: 245, 127
+  offset: 0, 0
+  index: -1
+saberRunning
+  rotate: false
+  xy: 475, 295
+  size: 185, 143
+  orig: 185, 143
+  offset: 0, 0
+  index: 2
+saberRunning
+  rotate: false
+  xy: 662, 295
+  size: 182, 143
+  orig: 182, 143
+  offset: 0, 0
+  index: 6
+saberRunning
+  rotate: false
+  xy: 277, 146
+  size: 180, 143
+  orig: 180, 143
+  offset: 0, 0
+  index: 5
+saberRunning
+  rotate: false
+  xy: 248, 1
+  size: 179, 143
+  orig: 179, 143
+  offset: 0, 0
+  index: 3
+saberRunning
+  rotate: false
+  xy: 475, 150
+  size: 178, 143
+  orig: 178, 143
+  offset: 0, 0
+  index: 4
+saberRunning
+  rotate: false
+  xy: 655, 150
+  size: 178, 143
+  orig: 178, 143
+  offset: 0, 0
+  index: 7
+saberRunning
+  rotate: false
+  xy: 429, 1
+  size: 177, 143
+  orig: 177, 143
+  offset: 0, 0
+  index: 0
+saberRunning
+  rotate: false
+  xy: 608, 5
+  size: 177, 143
+  orig: 177, 143
+  offset: 0, 0
+  index: 1
+saberStand
+  rotate: false
+  xy: 277, 291
+  size: 196, 147
+  orig: 196, 147
+  offset: 0, 0
+  index: -1
+swordSlash
+  rotate: false
+  xy: 1, 169
+  size: 274, 269
+  orig: 274, 269
+  offset: 0, 0
+  index: -1
