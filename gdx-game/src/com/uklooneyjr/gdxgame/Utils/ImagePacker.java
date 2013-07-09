@@ -6,6 +6,8 @@ import com.badlogic.gdx.tools.imagepacker.TexturePacker2.Settings;
 
 public class ImagePacker {
 	
+	private ImagePacker() {}
+	
 	public static void run() {
 		Settings settings = new Settings();
 		settings.filterMin = Texture.TextureFilter.Linear;

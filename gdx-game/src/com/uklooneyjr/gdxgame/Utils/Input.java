@@ -14,6 +14,8 @@ public class Input {
 	
 	private static int mouseX, mouseY;
 	
+	private Input() {}
+	
 	/**
 	 * Initialises all arrays to false
 	 */

@@ -1,11 +1,14 @@
 package com.uklooneyjr.gdxgame.Screens;
 
 import com.artemis.World;
+import com.artemis.managers.GroupManager;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.uklooneyjr.gdxgame.Systems.CollisionSystem;
+import com.uklooneyjr.gdxgame.Systems.EnemySpawningSystem;
 import com.uklooneyjr.gdxgame.Systems.ExpirySystem;
 import com.uklooneyjr.gdxgame.Systems.InputSystem;
 import com.uklooneyjr.gdxgame.Systems.MovementSystem;
@@ -38,10 +41,13 @@ public class GameScreen implements Screen {
 		
 		spriteRenderSystem = world.setSystem(new SpriteRenderSystem(camera), true);
 		inputSystem = world.setSystem(new InputSystem(), true);
+		world.setManager(new GroupManager());
 		world.setSystem(new SpriteAnimationSystem());
 		world.setSystem(new PlayerSystem(camera));
 	    world.setSystem(new MovementSystem());
 	    world.setSystem(new ExpirySystem());
+	    world.setSystem(new EnemySpawningSystem());
+	    world.setSystem(new CollisionSystem());
 		
 		world.initialize();
 		

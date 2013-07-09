@@ -2,6 +2,8 @@ package com.uklooneyjr.gdxgame.Utils;
 
 public class MathUtils {
 	
+	private MathUtils() {}
+	
 	/**
 	 * @param ax x coordinate of the first point
 	 * @param ay y coordinate of the first point

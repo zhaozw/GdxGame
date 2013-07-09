@@ -161,10 +161,10 @@ public class PlayerSystem extends EntityProcessingSystem {
 		
 		if (player.getDirection() == Direction.RIGHT) {
 			EntityFactory.createSwordSlash(pos.getX() + movingX + DISTANCE_FROM_SWORD_SLASH, 
-					pos.getY(), true ).addToWorld();
+					pos.getY(), Direction.RIGHT ).addToWorld();
 		} else {
 			EntityFactory.createSwordSlash(pos.getX() + movingX - DISTANCE_FROM_SWORD_SLASH, 
-					pos.getY(), false).addToWorld();
+					pos.getY(), Direction.LEFT).addToWorld();
 		}
 	}
 	
@@ -186,9 +186,9 @@ public class PlayerSystem extends EntityProcessingSystem {
 	
 	private void setAnimation() {
 		if (player.getDirection() == Direction.RIGHT) {
-			sprite.setScaleX(1);
+			sprite.setScaleX(Math.abs(sprite.getScaleX()));
 		} else {
-			sprite.setScaleX(-1);
+			sprite.setScaleX(-Math.abs(sprite.getScaleX()));
 		}
 		
 		if (player.isJumping()) {

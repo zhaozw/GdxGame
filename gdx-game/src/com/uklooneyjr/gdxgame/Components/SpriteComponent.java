@@ -2,6 +2,7 @@ package com.uklooneyjr.gdxgame.Components;
 
 import com.artemis.Component;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.uklooneyjr.gdxgame.Utils.Assets;
 
 public class SpriteComponent extends Component {
 	private String name;
@@ -36,6 +37,7 @@ public class SpriteComponent extends Component {
 	public SpriteComponent(String name, Layer layer) {
 		this.setName(name);
 		this.setLayer(layer);
+		setRegion(Assets.getTextureAtlas().findRegion(name));
 	}
 	  
 	public SpriteComponent(String name) {
@@ -50,6 +52,7 @@ public class SpriteComponent extends Component {
 		this.region = region;
 		this.w = region.getRegionWidth();
 		this.h = region.getRegionHeight();
+		//System.out.println(w * scaleX + "   " + h * scaleY);
 	}
 	
 	public TextureRegion getRegion() {
@@ -78,6 +81,12 @@ public class SpriteComponent extends Component {
 
 	public void setScaleX(float scaleX) {
 		this.scaleX = scaleX;
+	}
+	
+	public void setPixelSize(int w, int h) {
+		this.scaleX = ((float) w)/((float) this.w);
+		this.scaleY = ((float) h)/((float) this.h);
+		System.out.println(scaleX + "   " + scaleY);
 	}
 
 	public String getName() {

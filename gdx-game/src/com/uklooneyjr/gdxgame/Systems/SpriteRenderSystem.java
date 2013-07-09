@@ -13,14 +13,11 @@ import com.artemis.annotations.Mapper;
 import com.artemis.utils.ImmutableBag;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import com.uklooneyjr.gdxgame.Components.BoundsComponent;
 import com.uklooneyjr.gdxgame.Components.PositionComponent;
 import com.uklooneyjr.gdxgame.Components.SpriteComponent;
-import com.uklooneyjr.gdxgame.Utils.Assets;
 
 public class SpriteRenderSystem extends EntitySystem {
 	
@@ -31,10 +28,9 @@ public class SpriteRenderSystem extends EntitySystem {
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
 	private ShapeRenderer shapeRenderer;
-	private TextureAtlas atlas;
 	private List<Entity> sortedEntities;
 	
-	private static final boolean RENDER_BOUNDS = false;
+	private static final boolean RENDER_BOUNDS = true;
 	
 	@SuppressWarnings("unchecked")
 	public SpriteRenderSystem(OrthographicCamera camera) {
@@ -47,8 +43,6 @@ public class SpriteRenderSystem extends EntitySystem {
 		batch = new SpriteBatch();
 		shapeRenderer = new ShapeRenderer();
 		
-		atlas = Assets.getTextureAtlas();
-		
 		sortedEntities = new ArrayList<Entity>();
 	}
 
@@ -59,12 +53,7 @@ public class SpriteRenderSystem extends EntitySystem {
 	
 	@Override
 	protected void inserted(Entity e) {
-		SpriteComponent sprite = sm.get(e);
 		sortedEntities.add(e);
-		
-		TextureRegion reg = atlas.findRegion(sprite.getName());
-		
-		sprite.setRegion(reg);
 		
 		Collections.sort(sortedEntities, new Comparator<Entity>() {
 			@Override

@@ -1,6 +1,8 @@
 package com.uklooneyjr.gdxgame.Enums;
 
 public enum Direction {
-	LEFT,
-	RIGHT;
+	LEFT, 
+	RIGHT,
+	UP,
+	DOWN;
 }
